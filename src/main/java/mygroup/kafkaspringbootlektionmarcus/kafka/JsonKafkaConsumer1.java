@@ -11,18 +11,19 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @Service
-public class JsonKafkaConsumer {
+public class JsonKafkaConsumer1 {
     private static final Logger LOGGER =
-            LoggerFactory.getLogger(JsonKafkaConsumer.class);
-    @KafkaListener(topics = "javaguides_json", groupId = "myTopic")
+            LoggerFactory.getLogger(JsonKafkaConsumer1.class);
+    @KafkaListener(topics = "javaguides_json", groupId = "myGroup1")
     public void consume(User user) {
         LOGGER.info(String.format("Json message recieved -> %s", user.toString()));
+
         // Save the message to an external .txt file
         saveMessageToFile(user.toString());
     }
 
     private void saveMessageToFile(String message) {
-        try (PrintWriter writer = new PrintWriter(new FileWriter("rec_messages_mygroup1.txt", true))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("rec_messages_myGroup1.txt", true))) {
             writer.println(message);
         } catch (IOException e) {
             LOGGER.error("Error saving message to file", e);

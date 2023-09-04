@@ -1,1 +1,4 @@
-Hej igen på dig du igen!
+User{id=4, firstName='Kalle', lastName='Långben'}
+User{id=4, firstName='Kalle', lastName='Långben'}
+User{id=4, firstName='Kalle', lastName='Långben'}
+User{id=5, firstName='Kalle', lastName='Långben'}

@@ -1,6 +1,6 @@
-package mygroup.kafkaspringbootlektionmarcus.controller;
+package mygroup.kafkaspringbootlektionmarcus.Controller;
 
-import org.apache.kafka.clients.producer.KafkaProducer;
+import mygroup.kafkaspringbootlektionmarcus.kafka.KafkaProducer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController                         //2st olika API:er, REST och SOAP (REST är bättre, och snabbare) (= SOAP bygger på REST, i grunden)
 @RequestMapping("/api/v1/kafka")
 public class MessageController {
-    private KafkaProducer kafkaProducer;
+
+    private final KafkaProducer kafkaProducer;
 
     public MessageController(KafkaProducer kafkaProducer) {
         this.kafkaProducer = kafkaProducer;
@@ -19,7 +20,9 @@ public class MessageController {
     //http://localhost:8080/api/v1/kafka/publish?message=Hello World
     @GetMapping("/publish")
     public ResponseEntity<String>publish(@RequestParam("message")String message){
-        kafkaProducer.sendMessage(message);
+
+        kafkaProducer.sendMessage("myTopic", message);
         return ResponseEntity.ok("Message sent to the topic");
     }
 }
+
