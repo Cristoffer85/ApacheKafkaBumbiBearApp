@@ -11,9 +11,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @Service
-public class JsonKafkaConsumer1 {
+public class JsonTxtConsumer {
     private static final Logger LOGGER =
-            LoggerFactory.getLogger(JsonKafkaConsumer1.class);
+            LoggerFactory.getLogger(JsonTxtConsumer.class);
     @KafkaListener(topics = "javaguides_json", groupId = "myGroup1")
     public void consume(User user) {
         LOGGER.info(String.format("Json message recieved -> %s", user.toString()));

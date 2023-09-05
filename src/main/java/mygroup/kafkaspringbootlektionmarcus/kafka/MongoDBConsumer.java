@@ -9,13 +9,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @Service
-public class JsonKafkaConsumer2 {
-    private static final Logger LOGGER = LoggerFactory.getLogger(JsonKafkaConsumer2.class);
+public class MongoDBConsumer {
+    private static final Logger LOGGER = LoggerFactory.getLogger(MongoDBConsumer.class);
 
     private final MongoTemplate mongoTemplate;
 
     @Autowired
-    public JsonKafkaConsumer2(MongoTemplate mongoTemplate) {
+    public MongoDBConsumer(MongoTemplate mongoTemplate) {
         this.mongoTemplate = mongoTemplate;
     }
 
