@@ -14,22 +14,22 @@ import org.springframework.data.mongodb.core.SimpleMongoClientDatabaseFactory;
 public class MongoDBConfig {
 
     @Primary
-    @Bean(name = "localMongoTemplate")
-    public MongoTemplate localMongoTemplate() {
-        MongoClientSettings settings = MongoClientSettings.builder()
-                .applyConnectionString(new ConnectionString("mongodb://localhost:27017"))
-                .build();
-        MongoDatabase database = MongoClients.create(settings).getDatabase("mydb");
-        return new MongoTemplate(new SimpleMongoClientDatabaseFactory(MongoClients.create(settings), "mydb"));
-    }
-
     @Bean(name = "remoteMongoTemplate")
     public MongoTemplate remoteMongoTemplate() {
         MongoClientSettings settings = MongoClientSettings.builder()
                 .applyConnectionString(new ConnectionString("mongodb+srv://cristofferostberg85:Tomtarna1@cluster0.imetavy.mongodb.net/?retryWrites=true&w=majority"))
                 .build();
-        MongoDatabase database = MongoClients.create(settings).getDatabase("your_database_name");
-        return new MongoTemplate(new SimpleMongoClientDatabaseFactory(MongoClients.create(settings), "your_database_name"));
+        MongoDatabase database = MongoClients.create(settings).getDatabase("KafkaJsonApp");
+        return new MongoTemplate(new SimpleMongoClientDatabaseFactory(MongoClients.create(settings), "KafkaJsonApp"));
+    }
+
+    @Bean(name = "localMongoTemplate")
+    public MongoTemplate localMongoTemplate() {
+        MongoClientSettings settings = MongoClientSettings.builder()
+                .applyConnectionString(new ConnectionString("mongodb://localhost:27017"))
+                .build();
+        MongoDatabase database = MongoClients.create(settings).getDatabase("KafkaJsonApp");
+        return new MongoTemplate(new SimpleMongoClientDatabaseFactory(MongoClients.create(settings), "KafkaJsonApp"));
     }
 }
 

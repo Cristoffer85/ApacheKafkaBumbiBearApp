@@ -17,3 +17,9 @@ User{, firstName='Kalle', lastName='Långben'}
 User{, firstName='Kalle', lastName='Långben'}
 User{, firstName='Kalle', lastName='Långben'}
 User{, firstName='Kalle', lastName='Långben'}
+User{, firstName='Nisse', lastName='Långben'}
+User{, firstName='Nisse', lastName='Långben'}
+User{, firstName='Nisse', lastName='Långben'}
+User{, firstName='Nisse', lastName='Långben'}
+User{, firstName='Pelle', lastName='Långben'}
+User{, firstName='Pelle', lastName='Långben'}
