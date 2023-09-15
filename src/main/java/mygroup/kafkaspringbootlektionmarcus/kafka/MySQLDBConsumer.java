@@ -7,7 +7,7 @@ import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;
 
 @Service
-public class JsonKafkaConsumerMySQLDb {
+public class MySQLDBConsumer {
 
     @Autowired //Autowired används för att kunna använda något i samband med webapplikation
     private UserRepository userRepository;
