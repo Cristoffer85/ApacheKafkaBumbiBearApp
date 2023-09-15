@@ -13,5 +13,8 @@ public class KafkaSpringbootLektionMarcusApplication {
         // MongoDB password in the class MongoDBConfig? and
         // MySQL password in the file application.properties?
 
+        // ALSO!! REMOVE BEFORE PUSH!!
+        // REMEMBER TO REMOVE, OR NOT TO PUSH THE TYPED IN PASSWORDS TO GITHUB!!
+
     }
 }
