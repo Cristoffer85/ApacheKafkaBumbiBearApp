@@ -1,4 +1,4 @@
-package mygroup.kafkaspringbootlektionmarcus.Controller;
+package mygroup.kafkaspringbootlektionmarcus.controller;
 
 import mygroup.kafkaspringbootlektionmarcus.payload.User;
 import org.springframework.beans.factory.annotation.Autowired;

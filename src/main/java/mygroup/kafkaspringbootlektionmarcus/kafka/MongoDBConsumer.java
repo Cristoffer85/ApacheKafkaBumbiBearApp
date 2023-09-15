@@ -1,6 +1,6 @@
 package mygroup.kafkaspringbootlektionmarcus.kafka;
 
-import mygroup.kafkaspringbootlektionmarcus.Controller.MongoDBController;
+import mygroup.kafkaspringbootlektionmarcus.controller.MongoDBController;
 import mygroup.kafkaspringbootlektionmarcus.payload.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

@@ -10,9 +10,9 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 @Service
-public class KafkaConsumer1 {
+public class KafkaWebConsumer {
 
-    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaConsumer1.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(KafkaWebConsumer.class);
 
     @KafkaListener(topics = "myString_Topic", groupId = "String_Listener")
     public void consume(String message) {
@@ -23,7 +23,7 @@ public class KafkaConsumer1 {
     }
 
     private void saveMessageToFile(String message) {
-        try (PrintWriter writer = new PrintWriter(new FileWriter("rec_messages_mygroup1.txt", true))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("rec_Stringmessages_mygroup1.txt", true))) {
             writer.println(message);
         } catch (IOException e) {
             LOGGER.error("Error saving message to file", e);

@@ -1,4 +1,4 @@
-package mygroup.kafkaspringbootlektionmarcus.Controller;
+package mygroup.kafkaspringbootlektionmarcus.controller;
 
 import mygroup.kafkaspringbootlektionmarcus.kafka.JsonKafkaProducer;
 import mygroup.kafkaspringbootlektionmarcus.payload.User;
