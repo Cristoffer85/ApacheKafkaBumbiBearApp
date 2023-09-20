@@ -1,6 +1,6 @@
 package mygroup.kafkaspringbootlektionmarcus.controller;
 
-import mygroup.kafkaspringbootlektionmarcus.kafka.JsonKafkaProducer;
+import mygroup.kafkaspringbootlektionmarcus.producer.JsonKafkaProducer;
 import mygroup.kafkaspringbootlektionmarcus.payload.User;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

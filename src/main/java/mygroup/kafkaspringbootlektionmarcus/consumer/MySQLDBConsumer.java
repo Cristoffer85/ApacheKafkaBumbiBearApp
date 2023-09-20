@@ -1,4 +1,4 @@
-package mygroup.kafkaspringbootlektionmarcus.kafka;
+package mygroup.kafkaspringbootlektionmarcus.consumer;
 
 import mygroup.kafkaspringbootlektionmarcus.payload.User;
 import mygroup.kafkaspringbootlektionmarcus.repository.UserRepository;

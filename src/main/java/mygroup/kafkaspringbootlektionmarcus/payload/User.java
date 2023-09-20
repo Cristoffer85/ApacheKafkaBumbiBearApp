@@ -9,34 +9,25 @@ public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String customId;
-    private String firstName;
-    private String lastName;
+    private String species;
+    private String type;
+    private String fullname;
 
     public Long getId() {return id;}
     public void setId(Long id) {this.id = id;}
-    public String getCustomId() {return customId;}
-    public void setCustomId(String customId) {this.customId = customId;}
-    public String getFirstName() {
-        return firstName;
-    }
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-    public String getLastName() {
-        return lastName;
-    }
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
+    public String getSpecies() {return species;}
+    public void setSpecies(String species) {this.species = species;}
+    public String getType() {return type;}
+    public void setType(String type) {this.type = type;}
+    public String getFullname() {return fullname;}
+    public void setFullname(String fullName) {this.fullname = fullName;}
 
     @Override
     public String toString() {
-        return "User{" +
-                "customId='" + customId + '\'' +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+        return "Entry - " +
+                "Species= " + species +
+                ", type= " + type +
+                ", fullname= " + fullname;
     }
 }
 

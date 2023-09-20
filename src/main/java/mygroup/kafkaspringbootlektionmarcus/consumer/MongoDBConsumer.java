@@ -1,4 +1,4 @@
-package mygroup.kafkaspringbootlektionmarcus.kafka;
+package mygroup.kafkaspringbootlektionmarcus.consumer;
 
 import mygroup.kafkaspringbootlektionmarcus.controller.MongoDBController;
 import mygroup.kafkaspringbootlektionmarcus.payload.User;
@@ -26,7 +26,7 @@ public class MongoDBConsumer {
         // Save the message to both local and remote MongoDB servers
         mongoDBController.saveData(user);
 
-        LOGGER.info("Message saved to MongoDB");
+        LOGGER.info("Message saved to remote MongoDB Server.");
     }
 }
 

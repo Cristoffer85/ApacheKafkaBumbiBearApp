@@ -1,4 +1,4 @@
-package mygroup.kafkaspringbootlektionmarcus.kafka;
+package mygroup.kafkaspringbootlektionmarcus.producer;
 
 import mygroup.kafkaspringbootlektionmarcus.payload.User;
 import org.slf4j.Logger;
