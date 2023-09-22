@@ -1,6 +1,6 @@
-package mygroup.kafkaspringbootlektionmarcus.controller;
+package KafkaGroup.BumbiBearApp.controller;
 
-import mygroup.kafkaspringbootlektionmarcus.producer.KafkaProducer;
+import KafkaGroup.BumbiBearApp.producer.KafkaProducer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

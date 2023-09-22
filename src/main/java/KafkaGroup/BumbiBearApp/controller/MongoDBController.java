@@ -1,6 +1,6 @@
-package mygroup.kafkaspringbootlektionmarcus.controller;
+package KafkaGroup.BumbiBearApp.controller;
 
-import mygroup.kafkaspringbootlektionmarcus.payload.User;
+import KafkaGroup.BumbiBearApp.payload.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;

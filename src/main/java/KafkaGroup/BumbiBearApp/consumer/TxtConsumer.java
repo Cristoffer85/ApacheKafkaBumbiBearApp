@@ -1,6 +1,6 @@
-package mygroup.kafkaspringbootlektionmarcus.consumer;
+package KafkaGroup.BumbiBearApp.consumer;
 
-import mygroup.kafkaspringbootlektionmarcus.payload.User;
+import KafkaGroup.BumbiBearApp.payload.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;

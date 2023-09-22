@@ -1,4 +1,4 @@
-package mygroup.kafkaspringbootlektionmarcus.payload;
+package KafkaGroup.BumbiBearApp.payload;
 
 import jakarta.persistence.*;
 

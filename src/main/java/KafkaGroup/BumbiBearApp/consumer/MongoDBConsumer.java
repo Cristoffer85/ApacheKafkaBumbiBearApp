@@ -1,7 +1,7 @@
-package mygroup.kafkaspringbootlektionmarcus.consumer;
+package KafkaGroup.BumbiBearApp.consumer;
 
-import mygroup.kafkaspringbootlektionmarcus.controller.MongoDBController;
-import mygroup.kafkaspringbootlektionmarcus.payload.User;
+import KafkaGroup.BumbiBearApp.controller.MongoDBController;
+import KafkaGroup.BumbiBearApp.payload.User;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

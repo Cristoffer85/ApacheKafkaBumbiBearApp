@@ -1,7 +1,7 @@
-package mygroup.kafkaspringbootlektionmarcus.consumer;
+package KafkaGroup.BumbiBearApp.consumer;
 
-import mygroup.kafkaspringbootlektionmarcus.payload.User;
-import mygroup.kafkaspringbootlektionmarcus.repository.UserRepository;
+import KafkaGroup.BumbiBearApp.payload.User;
+import KafkaGroup.BumbiBearApp.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Service;

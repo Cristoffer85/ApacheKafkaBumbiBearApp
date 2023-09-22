@@ -1,4 +1,4 @@
-package mygroup.kafkaspringbootlektionmarcus.config;
+package KafkaGroup.BumbiBearApp.config;
 
 import com.mongodb.ConnectionString;
 import com.mongodb.MongoClientSettings;
