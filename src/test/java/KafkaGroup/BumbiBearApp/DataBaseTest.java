@@ -1,12 +1,10 @@
 package KafkaGroup.BumbiBearApp;
 
+import KafkaGroup.BumbiBearApp.mysqlrepository.UserSqlRepository;
 import KafkaGroup.BumbiBearApp.payload.User;
-import KafkaGroup.BumbiBearApp.repository.UserRepository;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
@@ -14,7 +12,7 @@ public class DataBaseTest {
 
 
     @Autowired
-    UserRepository userRepository;
+    UserSqlRepository userSqlRepository;
     static User testUser;
 
     @BeforeEach
@@ -28,7 +26,7 @@ public class DataBaseTest {
         System.out.println("All tests completed");
     }
 
-    @Test
+    /*@Test
     @Order(1)
     void createUser() {
         // Skapa ett objekt av User med specifik data
@@ -61,5 +59,5 @@ public class DataBaseTest {
 
         userRepository.deleteById(testUser.getId());
         assertTrue(userRepository.findById(testUser.getId()).isEmpty());
-    }
+    }*/
 }

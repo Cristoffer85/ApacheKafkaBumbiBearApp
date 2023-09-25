@@ -23,7 +23,6 @@ public class MongoDBConsumer {
     public void consume(User user) {
         LOGGER.info(String.format("Json message received -> %s", user.toString()));
 
-        // Save the message to both local and remote MongoDB servers
         mongoDBController.saveData(user);
 
         LOGGER.info("Message saved to remote MongoDB Server.");

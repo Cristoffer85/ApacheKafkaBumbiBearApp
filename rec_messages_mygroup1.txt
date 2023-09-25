@@ -1,2 +1,6 @@
 Entry - species= Bumbibjörn, type= Muskelbjörn, fullname= Gramse Bumbi
 Entry - Species= Bumbibjörn, type= Snällbjörn, fullname= Bombo Bumbi
+Entry - Species= Bumbibjörn, type= Gammelbjörn, fullname= Bernhard Zumbi
+Entry - Species= Brunbjörn, type= Grön, fullname= BRunbrunbrun
+Entry - Species= fgdgfdsg, type= dsfgsfdgdfsg, fullname= dsfhgfhgfd
+Entry - Species= fdgsdghgdj, type= asgdshg, fullname= afgdsg
