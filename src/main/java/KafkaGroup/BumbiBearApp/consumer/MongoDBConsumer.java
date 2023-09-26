@@ -1,6 +1,5 @@
 package KafkaGroup.BumbiBearApp.consumer;
 
-import KafkaGroup.BumbiBearApp.controller.MongoDBController;
 import KafkaGroup.BumbiBearApp.payload.MongoUser;
 import KafkaGroup.BumbiBearApp.payload.MySQLUser;
 import KafkaGroup.BumbiBearApp.repository.MongoUserRepository;
@@ -12,13 +11,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MongoDBConsumer {
-    private final MongoDBController mongoDBController;
     private final MongoUserRepository mongoUserRepository;
     private static final Logger LOGGER = LoggerFactory.getLogger(MongoDBConsumer.class);
 
     @Autowired
-    public MongoDBConsumer(MongoDBController mongoDBController, MongoUserRepository mongoUserRepository) {
-        this.mongoDBController = mongoDBController;
+    public MongoDBConsumer(MongoUserRepository mongoUserRepository) {
         this.mongoUserRepository = mongoUserRepository;
     }
 

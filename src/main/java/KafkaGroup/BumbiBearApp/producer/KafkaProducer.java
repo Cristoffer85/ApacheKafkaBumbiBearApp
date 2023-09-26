@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 //Klass som ansvarar för EN producer
 //LOGGER = Skriver ut/Loggar det som händer i kommunikationen med Kafka, in till IntelliJ
 
+// DO I NEED THIS CLASS STILL? WHATS THE USE OF IT?
+
 @Service
 public class KafkaProducer {
     private KafkaTemplate<String, String> kafkaTemplate;

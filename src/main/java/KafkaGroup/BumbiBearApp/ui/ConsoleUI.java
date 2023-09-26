@@ -64,10 +64,13 @@ import java.util.Scanner;
             System.out.print("Enter fullname: ");
             String fullname = scanner.nextLine();
 
+
+            // Move this to another class? Possible? Since in MongoDBConsumer, its located there, check up, move refactor?
             MySQLUser mySQLUser = new MySQLUser();
             mySQLUser.setSpecies(species);
             mySQLUser.setType(type);
             mySQLUser.setFullname(fullname);
+            //----------------------------------------------
 
             JsonKafkaProducer.sendMessage(mySQLUser);
 
