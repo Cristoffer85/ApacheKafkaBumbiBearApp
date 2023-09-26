@@ -3,7 +3,7 @@ package KafkaGroup.BumbiBearApp.payload;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "users")
+@Table(name = "BumbiCollection")
 public class MySQLUser {
 
     @Id

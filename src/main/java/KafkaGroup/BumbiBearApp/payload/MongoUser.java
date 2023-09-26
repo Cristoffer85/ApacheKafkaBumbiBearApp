@@ -3,7 +3,7 @@ package KafkaGroup.BumbiBearApp.payload;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "user") // Define the MongoDB collection name
+@Document(collection = "BumbiCollection") // Define the MongoDB collection name
 public class MongoUser {
 
     @Id
