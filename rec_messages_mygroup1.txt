@@ -4,3 +4,10 @@ Entry - Species= Bumbibjörn, type= Gammelbjörn, fullname= Bernhard Zumbi
 Entry - Species= Brunbjörn, type= Grön, fullname= BRunbrunbrun
 Entry - Species= fgdgfdsg, type= dsfgsfdgdfsg, fullname= dsfhgfhgfd
 Entry - Species= fdgsdghgdj, type= asgdshg, fullname= afgdsg
+Entry - Species= Kadkaghyfovfsddfio45654363456645, type= 56786876987906, fullname= 4556786858765jy
+Entry - Species= 999999999999999999999999999999999999999999999999, type= asdfgghfdjhgjh786586758888888888888888888, fullname= 999999999999999999999999999
+Entry - Species= sadgfghjhjljhjfhjjjjjjjjjjjjjjjjjjjj, type= 45645676fdghgfnbdgfb, fullname= sdfsdjfkkjlokdsxzsgffdhbdgfgfdsgsdfgfdgfdffdxxxxxxxxxxxxxxxxxxxxxxx
+Entry - Species= wreh333333333333333333333333333333333333333333333333333333, type= 333333333333333333333333333333333333333, fullname= ggggggggggggggggggggggggggggggggg
+Entry - Species= asdfffffffffffffffffffffff, type= ffffffffffffffffffffffffff, fullname= ffffffffffffffffffff
+Entry - Species= sddfdseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee, type= eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee, fullname= eeeeeeeeeeeeeeeeeeeeeeeeeeee
+Entry - Species= ttttttttttttttttttttttttttttttt, type= ttttttttttttttttttttttttttttttt, fullname= tttttttttttttttttttttttt

@@ -1,7 +1,7 @@
 package KafkaGroup.BumbiBearApp;
 
-import KafkaGroup.BumbiBearApp.mysqlrepository.UserSqlRepository;
-import KafkaGroup.BumbiBearApp.payload.User;
+import KafkaGroup.BumbiBearApp.repository.MySqlUserRepository;
+import KafkaGroup.BumbiBearApp.payload.MySQLUser;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -12,8 +12,8 @@ public class DataBaseTest {
 
 
     @Autowired
-    UserSqlRepository userSqlRepository;
-    static User testUser;
+    MySqlUserRepository mySqlUserRepository;
+    static MySQLUser testMySQLUser;
 
     @BeforeEach
     void setUp() {System.out.println("Before test");}
@@ -29,35 +29,35 @@ public class DataBaseTest {
     /*@Test
     @Order(1)
     void createUser() {
-        // Skapa ett objekt av User med specifik data
-        User user = new User();
+        // Skapa ett objekt av MySQLUser med specifik data
+        MySQLUser user = new MySQLUser();
         user.setType("A");
         user.setFullname("B");
 
-        // Spara User till Db
-        testUser = userRepository.save(user);
+        // Spara MySQLUser till Db
+        testMySQLUser = userRepository.save(user);
 
-        assertNotNull(userRepository.findById(testUser.getId()).get().getType());
+        assertNotNull(userRepository.findById(testMySQLUser.getId()).get().getType());
     }
 
     @Test
     @Order(2)
     void updateUser() {
         // Hämta en user
-        User fetchedUser = userRepository.findById(testUser.getId()).get();
+        MySQLUser fetchedUser = userRepository.findById(testMySQLUser.getId()).get();
         assertNotNull(fetchedUser);
 
-        // Spara User till Db
+        // Spara MySQLUser till Db
         fetchedUser.setType("Kalle");
         userRepository.save(fetchedUser);
-        assertEquals("Kalle", userRepository.findById(testUser.getId()).get().getType());
+        assertEquals("Kalle", userRepository.findById(testMySQLUser.getId()).get().getType());
     }
     @Test
     @Order(3)
     void removeUser(){
-        assertNotNull(userRepository.findById(testUser.getId()).get());
+        assertNotNull(userRepository.findById(testMySQLUser.getId()).get());
 
-        userRepository.deleteById(testUser.getId());
-        assertTrue(userRepository.findById(testUser.getId()).isEmpty());
+        userRepository.deleteById(testMySQLUser.getId());
+        assertTrue(userRepository.findById(testMySQLUser.getId()).isEmpty());
     }*/
 }

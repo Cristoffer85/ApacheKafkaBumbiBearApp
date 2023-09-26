@@ -1,7 +1,9 @@
 package KafkaGroup.BumbiBearApp.consumer;
 
 import KafkaGroup.BumbiBearApp.controller.MongoDBController;
-import KafkaGroup.BumbiBearApp.payload.User;
+import KafkaGroup.BumbiBearApp.payload.MongoUser;
+import KafkaGroup.BumbiBearApp.payload.MySQLUser;
+import KafkaGroup.BumbiBearApp.repository.MongoUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,21 +13,30 @@ import org.springframework.stereotype.Service;
 @Service
 public class MongoDBConsumer {
     private final MongoDBController mongoDBController;
+    private final MongoUserRepository mongoUserRepository;
     private static final Logger LOGGER = LoggerFactory.getLogger(MongoDBConsumer.class);
 
-
     @Autowired
-    public MongoDBConsumer(MongoDBController mongoDBController) {
+    public MongoDBConsumer(MongoDBController mongoDBController, MongoUserRepository mongoUserRepository) {
         this.mongoDBController = mongoDBController;
+        this.mongoUserRepository = mongoUserRepository;
     }
 
     @KafkaListener(topics = "javaguides_json", groupId = "myGroup2")
-    public void consume(User user) {
-        LOGGER.info(String.format("Json message received -> %s", user.toString()));
+    public void consume(MySQLUser mySQLUser) {
+        LOGGER.info(String.format("Json message received -> %s", mySQLUser.toString()));
 
-        mongoDBController.saveData(user);
+        // Skapa en instans av MongoUser och spara till Mongo-DB
+        MongoUser mongoUser = new MongoUser();
+        mongoUser.setSpecies(mySQLUser.getSpecies());
+        mongoUser.setType(mySQLUser.getType());
+        mongoUser.setFullname(mySQLUser.getFullname());
 
-        LOGGER.info("Message saved to remote MongoDB Server.");
+        mongoUserRepository.save(mongoUser);
+
+        LOGGER.info("Message saved to MongoDB.");
     }
 }
+
+
 

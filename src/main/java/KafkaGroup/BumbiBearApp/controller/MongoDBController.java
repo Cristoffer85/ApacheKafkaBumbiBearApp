@@ -1,10 +1,11 @@
 package KafkaGroup.BumbiBearApp.controller;
 
-import KafkaGroup.BumbiBearApp.payload.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
+
+import KafkaGroup.BumbiBearApp.payload.MongoUser;
 
 @Service
 public class MongoDBController {
@@ -18,13 +19,12 @@ public class MongoDBController {
         this.remoteMongoTemplate = remoteMongoTemplate;
     }
 
-    public void saveData(User user) {
+    public void saveData(MongoUser mongoUser) {
         try {
-            // Attempt to save to the remote MongoDB server
-            remoteMongoTemplate.save(user);
+            remoteMongoTemplate.save(mongoUser);
         } catch (Exception e) {
-            // If the remote save fails, fall back to the local MongoDB server
-            localMongoTemplate.save(user);
+            localMongoTemplate.save(mongoUser);
         }
     }
 }
+

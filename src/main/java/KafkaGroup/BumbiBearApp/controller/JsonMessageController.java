@@ -1,6 +1,6 @@
 package KafkaGroup.BumbiBearApp.controller;
 
-import KafkaGroup.BumbiBearApp.payload.User;
+import KafkaGroup.BumbiBearApp.payload.MySQLUser;
 import KafkaGroup.BumbiBearApp.producer.JsonKafkaProducer;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,8 +16,8 @@ public class JsonMessageController {
         this.kafkaProducer = kafkaProducer;
     }
     @PostMapping("/publish")
-    public ResponseEntity<String> publish(@RequestBody User user) {
-        kafkaProducer.sendMessage(user);
+    public ResponseEntity<String> publish(@RequestBody MySQLUser mySQLUser) {
+        kafkaProducer.sendMessage(mySQLUser);
         return ResponseEntity.ok("Json Message send to Kafka Topic");
     }
 }
