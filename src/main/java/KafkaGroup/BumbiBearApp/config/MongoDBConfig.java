@@ -25,7 +25,7 @@ public class MongoDBConfig {
     @Bean(name = "remoteMongoTemplate")
     public MongoTemplate remoteMongoTemplate() {
         MongoClientSettings settings = MongoClientSettings.builder()
-                .applyConnectionString(new ConnectionString("mongodb+srv://cristofferostberg85:Tomtarna1@cluster0.imetavy.mongodb.net/?retryWrites=true&w=majority"))
+                .applyConnectionString(new ConnectionString("mongodb+srv://cristofferostberg85:<password>@cluster0.imetavy.mongodb.net/?retryWrites=true&w=majority"))
                 .build();
         MongoDatabase database = MongoClients.create(settings).getDatabase("KafkaJsonApp");
 
