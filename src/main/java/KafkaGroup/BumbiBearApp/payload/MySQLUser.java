@@ -24,10 +24,7 @@ public class MySQLUser {
 
     @Override
     public String toString() {
-        return "Entry - " +
-                "Species= " + species +
-                ", type= " + type +
-                ", fullname= " + fullname;
+        return "Species= " + species + ", type= " + type + ", fullname= " + fullname;
     }
 }
 

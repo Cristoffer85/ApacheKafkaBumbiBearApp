@@ -1,15 +1,16 @@
-Entry - species= Bumbibjörn, type= Muskelbjörn, fullname= Gramse Bumbi
-Entry - Species= Bumbibjörn, type= Snällbjörn, fullname= Bombo Bumbi
-Entry - Species= Bumbibjörn, type= Gammelbjörn, fullname= Bernhard Zumbi
-Entry - Species= Brunbjörn, type= Grön, fullname= BRunbrunbrun
-Entry - Species= fgdgfdsg, type= dsfgsfdgdfsg, fullname= dsfhgfhgfd
-Entry - Species= fdgsdghgdj, type= asgdshg, fullname= afgdsg
-Entry - Species= Kadkaghyfovfsddfio45654363456645, type= 56786876987906, fullname= 4556786858765jy
-Entry - Species= 999999999999999999999999999999999999999999999999, type= asdfgghfdjhgjh786586758888888888888888888, fullname= 999999999999999999999999999
-Entry - Species= sadgfghjhjljhjfhjjjjjjjjjjjjjjjjjjjj, type= 45645676fdghgfnbdgfb, fullname= sdfsdjfkkjlokdsxzsgffdhbdgfgfdsgsdfgfdgfdffdxxxxxxxxxxxxxxxxxxxxxxx
-Entry - Species= wreh333333333333333333333333333333333333333333333333333333, type= 333333333333333333333333333333333333333, fullname= ggggggggggggggggggggggggggggggggg
-Entry - Species= asdfffffffffffffffffffffff, type= ffffffffffffffffffffffffff, fullname= ffffffffffffffffffff
-Entry - Species= sddfdseeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee, type= eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee, fullname= eeeeeeeeeeeeeeeeeeeeeeeeeeee
-Entry - Species= ttttttttttttttttttttttttttttttt, type= ttttttttttttttttttttttttttttttt, fullname= tttttttttttttttttttttttt
-Entry - Species= 5555555555555555555555555555555555, type= 555555555555555555555555555555555, fullname= 5555555555555555555555555555
-Entry - Species= 222222222222222, type= 22222222222222, fullname= 222222222222
+
+Species= mmmmmmmmmmmm, Type= mmmmmmmmmmmmmm, Fullname= mmmmmmmmmmmmmmm
+Species= nnnnnnnnnn, Type= nnnnnnnnn, Fullname= nnnnnnnn
+Species= kkkkkkkkkkkkk, Type= kkkkkkkkkkkk, Fullname= kkkkkkkkkkkk
+Species= yyyyyyyyyyy, Type= yyyyyyyyyyyyy, Fullname= yyyyyyyyyyy
+Species= uuuuuuuuuu, Type= uuuuuuuuuu, Fullname= uuuuuuuuuuu
+Species= 7777777777777, Type= 777777777777, Fullname= 777777777777
+{"species":"iiiiiiiiiiiiiii","type":"iiiiiiiiiiiiiii","fullname":"iiiiiiiiiiii"}
+Species= 99999999999, Type= 99999999999, Fullname= 9999999999
+Species= llllllllllllll, Type= llllllllllll, Fullname= llllllllllll
+Species= llllllllllllll, Type= llllllllllll, Fullname= llllllllllll
+Species= 7777777777, Type= 77777777, Fullname= 777777
+Species= rrrrrrr, Type= rrrrrr, Fullname= rrrrrrr
+Species= eeeeeeee, Type= eeeee, Fullname= eeeeeee
+Species= 3333333333, Type= 333333333, Fullname= 3333333
+Species= 2222222, Type= 2222222, Fullname= 2222222

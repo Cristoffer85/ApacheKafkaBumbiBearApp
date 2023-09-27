@@ -3,11 +3,11 @@ package KafkaGroup.BumbiBearApp.payload;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "BumbiCollection") // Define the MongoDB collection name
+@Document(collection = "BumbiCollection")
 public class MongoUser {
 
     @Id
-    private String id; // Use String or ObjectId as the ID type
+    private String id;
 
     private String species;
     private String type;
@@ -25,12 +25,7 @@ public class MongoUser {
 
     @Override
     public String toString() {
-        return "MongoUser{" +
-                "id='" + id + '\'' +
-                ", species='" + species + '\'' +
-                ", type='" + type + '\'' +
-                ", fullname='" + fullname + '\'' +
-                '}';
+        return  "Species= " + species + ", Type= " + type + ", Fullname= " + fullname;
     }
 }
 

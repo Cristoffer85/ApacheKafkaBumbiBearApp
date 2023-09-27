@@ -1,7 +1,6 @@
 package KafkaGroup.BumbiBearApp.consumer;
 
 import KafkaGroup.BumbiBearApp.payload.MongoUser;
-import KafkaGroup.BumbiBearApp.payload.MySQLUser;
 import KafkaGroup.BumbiBearApp.repository.MongoUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -19,21 +18,21 @@ public class MongoDBConsumer {
         this.mongoUserRepository = mongoUserRepository;
     }
 
-    @KafkaListener(topics = "javaguides_json", groupId = "myGroup2")
-    public void consume(MySQLUser mySQLUser) {
-        LOGGER.info(String.format("Json message received -> %s", mySQLUser.toString()));
+    @KafkaListener(topics = "mongodb_data", groupId = "myMongoGroup")
+    public void consume(MongoUser mongoUser) {
+        LOGGER.info(String.format("MongoDB message received -> %s", mongoUser.toString()));
 
-        // Skapa en instans av MongoUser och spara till Mongo-DB
-        MongoUser mongoUser = new MongoUser();
-        mongoUser.setSpecies(mySQLUser.getSpecies());
-        mongoUser.setType(mySQLUser.getType());
-        mongoUser.setFullname(mySQLUser.getFullname());
-
-        mongoUserRepository.save(mongoUser);
-
-        LOGGER.info("Message saved to MongoDB.");
+        try {
+            mongoUserRepository.save(mongoUser);
+            LOGGER.info("Message saved to MongoDB.");
+        } catch (Exception e) {
+            LOGGER.error("Error saving message to MongoDB", e);
+        }
     }
 }
+
+
+
 
 
 

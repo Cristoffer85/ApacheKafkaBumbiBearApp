@@ -1,6 +1,5 @@
 package KafkaGroup.BumbiBearApp.consumer;
 
-import KafkaGroup.BumbiBearApp.payload.MySQLUser;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.kafka.annotation.KafkaListener;
@@ -12,14 +11,15 @@ import java.io.PrintWriter;
 
 @Service
 public class TxtConsumer {
-    private static final Logger LOGGER =
-            LoggerFactory.getLogger(TxtConsumer.class);
-    @KafkaListener(topics = "javaguides_json", groupId = "myGroup1")
-    public void consume(MySQLUser mySQLUser) {
-        LOGGER.info(String.format("Json message recieved -> %s", mySQLUser.toString()));
+    private static final Logger LOGGER = LoggerFactory.getLogger(TxtConsumer.class);
 
-        // Spara datan till lokal .txt-fil
-        saveMessageToFile(mySQLUser.toString());
+    @KafkaListener(topics = "javaguides_json", groupId = "myGroup1")
+    public void consume(String message) {
+        LOGGER.info(String.format(".Txt message received -> %s", message));
+
+        saveMessageToFile(message);
+
+        LOGGER.info("Message saved to .Txt.");
     }
 
     private void saveMessageToFile(String message) {
@@ -30,3 +30,4 @@ public class TxtConsumer {
         }
     }
 }
+

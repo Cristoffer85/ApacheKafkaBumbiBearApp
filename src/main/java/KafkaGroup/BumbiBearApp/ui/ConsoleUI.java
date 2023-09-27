@@ -1,79 +1,91 @@
 package KafkaGroup.BumbiBearApp.ui;
 
+import KafkaGroup.BumbiBearApp.payload.MongoUser;
 import KafkaGroup.BumbiBearApp.payload.MySQLUser;
-import KafkaGroup.BumbiBearApp.producer.JsonKafkaProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.Scanner;
 
-    @Component
-    public class ConsoleUI {
+@Service
+public class ConsoleUI {
 
-        private final KafkaTemplate<String, String> stringKafkaTemplate;
-        private final KafkaTemplate<String, MySQLUser> userKafkaTemplate;
+    private static KafkaTemplate<String, MongoUser> mongoUserKafkaTemplate;
+    private static KafkaTemplate<String, MySQLUser> mySQLUserKafkaTemplate;
+    private static KafkaTemplate<String, String> txtKafkaTemplate;
 
-        @Autowired
-        public ConsoleUI(KafkaTemplate<String, String> stringKafkaTemplate,
-                         KafkaTemplate<String, MySQLUser> userKafkaTemplate) {
-            this.stringKafkaTemplate = stringKafkaTemplate;
-            this.userKafkaTemplate = userKafkaTemplate;
-        }
+    @Autowired
+    public ConsoleUI(KafkaTemplate<String, MongoUser> mongoUserKafkaTemplate,
+                     KafkaTemplate<String, MySQLUser> mySQLUserKafkaTemplate) {
+        ConsoleUI.mongoUserKafkaTemplate = mongoUserKafkaTemplate;
+        ConsoleUI.mySQLUserKafkaTemplate = mySQLUserKafkaTemplate;
+    }
 
-        public static void runConsoleUI() {
+    @Autowired
+    public void setTxtKafkaTemplate(KafkaTemplate<String, String> txtKafkaTemplate) {
+        ConsoleUI.txtKafkaTemplate = txtKafkaTemplate;
+    }
 
-            Scanner scanner = new Scanner(System.in);
+    public static void runConsoleUI() {
+        Scanner scanner = new Scanner(System.in);
 
-            while (true) {
-                displayMenu();
-                int choice = scanner.nextInt();
-                scanner.nextLine();
+        while (true) {
+            displayMenu();
+            int choice = scanner.nextInt();
+            scanner.nextLine();
 
-                switch (choice) {
-                    case 1:
-                        sendUserDataToKafka(scanner);
-                        break;
-                    case 2:
-                        break;
-                    case 0:
-                        System.out.println("Exiting...");
-                        return;
-                    default:
-                        System.out.println("Invalid choice. Please try again.");
+            switch (choice) {
+                case 1 -> sendToAllConsumers(scanner);
+                case 2 -> {}// Option 2 logiken
+                case 0 -> {System.out.println("Exiting...");
+                    return;
                 }
+                default -> System.out.println("Invalid choice. Please try again.");
             }
         }
-
-        public static void displayMenu() {
-            System.out.println("===== Console UI Menu =====");
-            System.out.println("1. Send MySQLUser Data to Kafka");
-            System.out.println("2. Option 2 (Dormant, right now atleast..)");
-            System.out.println("0. Exit");
-            System.out.println("===========================");
-            System.out.print("Enter your choice: ");
-        }
-
-        public static void sendUserDataToKafka(Scanner scanner) {
-            System.out.print("Enter species: ");
-            String species = scanner.nextLine();
-
-            System.out.print("Enter type: ");
-            String type = scanner.nextLine();
-
-            System.out.print("Enter fullname: ");
-            String fullname = scanner.nextLine();
-
-
-            // Move this to another class? Possible? Since in MongoDBConsumer, its located there, check up, move refactor?
-            MySQLUser mySQLUser = new MySQLUser();
-            mySQLUser.setSpecies(species);
-            mySQLUser.setType(type);
-            mySQLUser.setFullname(fullname);
-            //----------------------------------------------
-
-            JsonKafkaProducer.sendMessage(mySQLUser);
-
-            System.out.println("MySQLUser data sent to Kafka.");
-        }
     }
+
+    public static void displayMenu() {
+        System.out.println("===== Console UI Menu =====");
+        System.out.println("1. Send Data to Kafka (All Consumers)");
+        System.out.println("2. Option 2 (Dormant, right now)");
+        System.out.println("0. Exit");
+        System.out.println("===========================");
+        System.out.print("Enter your choice: \n");
+    }
+
+    public static void sendToAllConsumers(Scanner scanner) {
+        System.out.print("Enter species: ");
+        String species = scanner.nextLine();
+
+        System.out.print("Enter type: ");
+        String type = scanner.nextLine();
+
+        System.out.print("Enter fullname: ");
+        String fullname = scanner.nextLine();
+
+        // Create MongoUser object
+        MongoUser mongoUser = new MongoUser();
+        mongoUser.setSpecies(species);
+        mongoUser.setType(type);
+        mongoUser.setFullname(fullname);
+
+        // Create MySQLUser object
+        MySQLUser mySQLUser = new MySQLUser();
+        mySQLUser.setSpecies(species);
+        mySQLUser.setType(type);
+        mySQLUser.setFullname(fullname);
+
+        // Send data to MongoDB and MySQL consumers
+        mongoUserKafkaTemplate.send("mongodb_data", mongoUser);
+        mySQLUserKafkaTemplate.send("mysql_data", mySQLUser);
+
+        // Send data to TxtConsumer (Uses MongoUser class, since it was easy applicable. No need to create a third User/Entity class just for that, i thought.)
+        txtKafkaTemplate.send("javaguides_json", mongoUser.toString());
+
+        System.out.println("Data sent to MongoDB- MySQLDB- and TxtConsumer.");
+    }
+}
+
+
