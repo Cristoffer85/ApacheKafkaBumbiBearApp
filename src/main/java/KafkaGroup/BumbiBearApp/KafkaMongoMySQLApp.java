@@ -8,7 +8,6 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "KafkaGroup.BumbiBearApp.repository")
-@EnableMongoRepositories(basePackages = "KafkaGroup.BumbiBearApp.mongorepository")
 public class KafkaMongoMySQLApp {
 
     public static void main(String[] args) {

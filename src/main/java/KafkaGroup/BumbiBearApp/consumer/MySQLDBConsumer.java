@@ -1,7 +1,7 @@
 package KafkaGroup.BumbiBearApp.consumer;
 
 import KafkaGroup.BumbiBearApp.payload.MySQLUser;
-import KafkaGroup.BumbiBearApp.repository.MySqlUserRepository;
+import KafkaGroup.BumbiBearApp.repository.MySQLUserRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,11 +10,11 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class MySQLDBConsumer {
-    private final MySqlUserRepository mySQLUserRepository;
+    private final MySQLUserRepository mySQLUserRepository;
     private static final Logger LOGGER = LoggerFactory.getLogger(MySQLDBConsumer.class);
 
     @Autowired
-    public MySQLDBConsumer(MySqlUserRepository mySQLUserRepository) {
+    public MySQLDBConsumer(MySQLUserRepository mySQLUserRepository) {
         this.mySQLUserRepository = mySQLUserRepository;
     }
 

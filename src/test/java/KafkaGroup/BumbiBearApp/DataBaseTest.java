@@ -1,6 +1,6 @@
 package KafkaGroup.BumbiBearApp;
 
-import KafkaGroup.BumbiBearApp.repository.MySqlUserRepository;
+import KafkaGroup.BumbiBearApp.repository.MySQLUserRepository;
 import KafkaGroup.BumbiBearApp.payload.MySQLUser;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,7 +12,7 @@ public class DataBaseTest {
 
 
     @Autowired
-    MySqlUserRepository mySqlUserRepository;
+    MySQLUserRepository mySqlUserRepository;
     static MySQLUser testMySQLUser;
 
     @BeforeEach
