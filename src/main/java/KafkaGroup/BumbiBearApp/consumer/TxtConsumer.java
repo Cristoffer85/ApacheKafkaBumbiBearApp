@@ -23,7 +23,7 @@ public class TxtConsumer {
     }
 
     private void saveMessageToFile(String message) {
-        try (PrintWriter writer = new PrintWriter(new FileWriter("rec_messages_myGroup1.txt", true))) {
+        try (PrintWriter writer = new PrintWriter(new FileWriter("Rec_data_TxtConsumer.txt", true))) {
             writer.println(message);
         } catch (IOException e) {
             LOGGER.error("Error saving message to file", e);
