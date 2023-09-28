@@ -11,10 +11,10 @@ import java.util.List;
 @RequestMapping("/api/mongo-users")
 public class MongoUserController {
 
-    private final MyMongoService mongoService;
+    private final MongoService mongoService;
 
     @Autowired
-    public MongoUserController(MyMongoService mongoService) {
+    public MongoUserController(MongoService mongoService) {
         this.mongoService = mongoService;
     }
 

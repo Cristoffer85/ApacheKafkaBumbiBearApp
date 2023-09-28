@@ -8,12 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MyMongoService {
+public class MongoService {
 
     private final MongoUserRepository mongoUserRepository;
 
     @Autowired
-    public MyMongoService(MongoUserRepository mongoUserRepository) {
+    public MongoService(MongoUserRepository mongoUserRepository) {
         this.mongoUserRepository = mongoUserRepository;
     }
 

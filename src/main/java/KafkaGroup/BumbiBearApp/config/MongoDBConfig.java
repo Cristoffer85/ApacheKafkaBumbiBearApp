@@ -5,6 +5,7 @@ import com.mongodb.MongoClientSettings;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoDatabase;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -16,14 +17,17 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @EnableMongoRepositories(basePackages = "KafkaGroup.BumbiBearApp.repository")
 public class MongoDBConfig {
 
+    @Value("${mongodb.connection-string}") // Inject the property value from application.properties
+    private String mongoConnectionString;
+
     @Bean(name = "remoteMongoTemplate")
     public MongoTemplate remoteMongoTemplate() {
         MongoClientSettings settings = MongoClientSettings.builder()
-                .applyConnectionString(new ConnectionString("mongodb+srv://cristofferostberg85:Tomtarna1@cluster0.imetavy.mongodb.net/?retryWrites=true&w=majority"))
+                .applyConnectionString(new ConnectionString(mongoConnectionString))
                 .build();
-        MongoDatabase database = MongoClients.create(settings).getDatabase("KafkaJsonApp");
+        MongoDatabase database = MongoClients.create(settings).getDatabase("BumbiBearApp");
 
-        return new MongoTemplate(new SimpleMongoClientDatabaseFactory(MongoClients.create(settings), "KafkaJsonApp"));
+        return new MongoTemplate(new SimpleMongoClientDatabaseFactory(MongoClients.create(settings), "BumbiBearApp"));
     }
 
     @Bean(name = "localMongoTemplate")
@@ -31,9 +35,9 @@ public class MongoDBConfig {
         MongoClientSettings settings = MongoClientSettings.builder()
                 .applyConnectionString(new ConnectionString("mongodb://localhost:27017"))
                 .build();
-        MongoDatabase database = MongoClients.create(settings).getDatabase("KafkaJsonApp");
+        MongoDatabase database = MongoClients.create(settings).getDatabase("BumbiBearApp");
 
-        return new MongoTemplate(new SimpleMongoClientDatabaseFactory(MongoClients.create(settings), "KafkaJsonApp"));
+        return new MongoTemplate(new SimpleMongoClientDatabaseFactory(MongoClients.create(settings), "BumbiBearApp"));
     }
 
     @Primary

@@ -11,10 +11,10 @@ import java.util.List;
 @RequestMapping("/api/mysql-users")
 public class MySQLUserController {
 
-    private final MyMySQLService mySQLService;
+    private final MySQLService mySQLService;
 
     @Autowired
-    public MySQLUserController(MyMySQLService mySQLService) {
+    public MySQLUserController(MySQLService mySQLService) {
         this.mySQLService = mySQLService;
     }
 

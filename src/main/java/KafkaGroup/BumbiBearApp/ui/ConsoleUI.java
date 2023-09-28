@@ -1,9 +1,9 @@
 package KafkaGroup.BumbiBearApp.ui;
 
-import KafkaGroup.BumbiBearApp.fetch.MyMySQLService;
+import KafkaGroup.BumbiBearApp.fetch.MySQLService;
 import KafkaGroup.BumbiBearApp.payload.MongoUser;
 import KafkaGroup.BumbiBearApp.payload.MySQLUser;
-import KafkaGroup.BumbiBearApp.fetch.MyMongoService;
+import KafkaGroup.BumbiBearApp.fetch.MongoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -20,22 +20,22 @@ public class ConsoleUI {
     private static KafkaTemplate<String, MongoUser> mongoUserKafkaTemplate;
     private static KafkaTemplate<String, MySQLUser> mySQLUserKafkaTemplate;
     private static KafkaTemplate<String, String> txtKafkaTemplate;
-    private static MyMongoService myMongoService;
-    private static MyMySQLService myMySQLService;
+    private static MongoService mongoService;
+    private static MySQLService mySQLService;
 
     @Autowired
     public ConsoleUI(
             KafkaTemplate<String, MongoUser> mongoUserKafkaTemplate,
             KafkaTemplate<String, MySQLUser> mySQLUserKafkaTemplate,
             KafkaTemplate<String, String> txtKafkaTemplate,
-            MyMongoService myMongoService,
-            MyMySQLService myMySQLService
+            MongoService mongoService,
+            MySQLService mySQLService
     ) {
         ConsoleUI.mongoUserKafkaTemplate = mongoUserKafkaTemplate;
         ConsoleUI.mySQLUserKafkaTemplate = mySQLUserKafkaTemplate;
         ConsoleUI.txtKafkaTemplate = txtKafkaTemplate;
-        ConsoleUI.myMongoService = myMongoService;
-        ConsoleUI.myMySQLService = myMySQLService;
+        ConsoleUI.mongoService = mongoService;
+        ConsoleUI.mySQLService = mySQLService;
     }
 
     public static void runConsoleUI() {
@@ -47,17 +47,11 @@ public class ConsoleUI {
             scanner.nextLine();
 
             switch (choice) {
-                case 1:
-                    sendToAllConsumers(scanner);
-                    break;
-                case 2:
-                    displayDataFromDatabases();
-                    break;
-                case 0:
-                    System.out.println("Exiting...");
-                    return;
-                default:
-                    System.out.println("Invalid choice. Please try again.");
+                case 1 -> sendToAllConsumers(scanner);
+                case 2 -> displayDataFromDatabases();
+                case 0 -> {System.out.println("Exiting..."); return; }
+
+                default -> System.out.println("Invalid choice. Please try again.");
             }
         }
     }
@@ -65,7 +59,7 @@ public class ConsoleUI {
     public static void displayMenu() {
         System.out.println("===== Console UI Menu =====");
         System.out.println("1. Send Data (through Kafka) to MongoDB, MySQL & .Txt");
-        System.out.println("2. View Data (through Kafka) from MongoDB, MySQL & .Txt");
+        System.out.println("2. View Data from MongoDB, MySQL & .Txt");
         System.out.println("0. Exit");
         System.out.println("===========================");
         System.out.print("Enter your choice: \n");
@@ -104,19 +98,22 @@ public class ConsoleUI {
     }
 
     public static void displayDataFromDatabases() {
-        // Display MongoDB and MySQL data (same as before)
-        List<MongoUser> mongoUsers = myMongoService.getAllMongoUsers();
+        // Display/List MongoDB data
+        List<MongoUser> mongoUsers = mongoService.getAllMongoUsers();
         System.out.println("MongoDB Data:");
         for (MongoUser user : mongoUsers) {
             System.out.println(user.toString());
         }
 
-        List<MySQLUser> mySQLUsers = myMySQLService.getAllMySQLUsers();
+        // Display/List MySQL data
+        List<MySQLUser> mySQLUsers = mySQLService.getAllMySQLUsers();
         System.out.println("\nMySQL Data:");
         for (MySQLUser user : mySQLUsers) {
             System.out.println(user.toString());
         }
 
+        // Display/List .Txt data
+        // (Had to add/have the try-catch here as well, since the TxtConsumer have it, dont know why by i couldnt make it work without it. Even since both MongoDB and MySQLConsumer have try-catches as well. Wellwell, question for another decade, i suppose.
         System.out.println("\n.Txt File Data:");
         try {
             List<String> lines = Files.readAllLines(Paths.get("rec_messages_myGroup1.txt"));

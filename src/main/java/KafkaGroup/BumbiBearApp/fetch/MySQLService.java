@@ -7,12 +7,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class MyMySQLService {
+public class MySQLService {
 
     private final MySQLUserRepository mySQLUserRepository;
 
     @Autowired
-    public MyMySQLService(MySQLUserRepository mySQLUserRepository) {
+    public MySQLService(MySQLUserRepository mySQLUserRepository) {
         this.mySQLUserRepository = mySQLUserRepository;
     }
 

@@ -16,10 +16,11 @@ public class MainBumbi {
     }
 }
 
-        // NOTE: IF run/saving to either MongoDB server, or MySQL local storage isnt working, have you remembered to change the
-        // MongoDB password in the class MongoDBConfig? and
-        // MySQL password in the file application.properties?
+        // NOTE: IF run/saving to either MongoDB server or MySQL local storage isnt working, have you remembered to change the
+        // MongoDB and MySQL settings in the file application.properties?
 
-        // ALSO!! REMOVE BEFORE PUSH!!
-        // REMEMBER TO REMOVE, OR NOT TO PUSH THE TYPED IN PASSWORDS TO GITHUB!!
+
+        // ------> ALSO!! VERY BIG REMEMBER NOTICE!! <------
+
+        // HAVE YOU REMEMBERED TO REMOVE, OR NOT TO PUSH TYPED IN PASSWORDS TO THE PUBLIC REPO ON GITHUB???
 
