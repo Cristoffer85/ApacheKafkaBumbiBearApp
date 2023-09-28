@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 public class TxtConsumer {
     private static final Logger LOGGER = LoggerFactory.getLogger(TxtConsumer.class);
 
-    @KafkaListener(topics = "javaguides_json", groupId = "myGroup1")
+    @KafkaListener(topics = "BumbiRegister", groupId = "myTxtGroup")
     public void consume(String message) {
         LOGGER.info(String.format(".Txt message received -> %s", message));
 

@@ -21,8 +21,8 @@ public class Controller_MessageJson {
 
     @PostMapping("/publish")
     public ResponseEntity<String> publish(@RequestBody MySQLUser mySQLUser) {
-        kafkaProducer.sendMessage("javaguides_json", mySQLUser);
-        return ResponseEntity.ok("Json Message sent to Kafka Topic");
+        kafkaProducer.sendMessage("BumbiRegister", mySQLUser);
+        return ResponseEntity.ok("[Json] Message sent to Kafka Topic");
     }
 }
 

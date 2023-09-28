@@ -10,6 +10,6 @@ public class TopicConfig {
 
     @Bean
     public NewTopic myTopic(){
-        return TopicBuilder.name("javaguides_json").build();
+        return TopicBuilder.name("BumbiRegister").build();
     }
 }

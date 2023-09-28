@@ -1,9 +1,9 @@
 package KafkaGroup.BumbiBearApp.ui;
 
+import KafkaGroup.BumbiBearApp.fetch.MyMySQLService;
 import KafkaGroup.BumbiBearApp.payload.MongoUser;
 import KafkaGroup.BumbiBearApp.payload.MySQLUser;
 import KafkaGroup.BumbiBearApp.fetch.MyMongoService;
-import KafkaGroup.BumbiBearApp.fetch.MyMySQLService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
@@ -98,7 +98,7 @@ public class ConsoleUI {
         mySQLUserKafkaTemplate.send("mysql_data", mySQLUser);
 
         // Send data to TxtConsumer (Uses MongoUser class, since it was easily applicable. No need to create a third User/Entity class just for that.)
-        txtKafkaTemplate.send("javaguides_json", mongoUser.toString());
+        txtKafkaTemplate.send("BumbiRegister", mongoUser.toString());
 
         System.out.println("Data sent to MongoDB- MySQLDB- and TxtConsumer.");
     }

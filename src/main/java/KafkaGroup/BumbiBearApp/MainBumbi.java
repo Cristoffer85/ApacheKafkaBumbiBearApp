@@ -4,14 +4,13 @@ import KafkaGroup.BumbiBearApp.ui.ConsoleUI;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
-import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 @SpringBootApplication
 @EnableJpaRepositories(basePackages = "KafkaGroup.BumbiBearApp.repository")
-public class KafkaMongoMySQLApp {
+public class MainBumbi {
 
     public static void main(String[] args) {
-        SpringApplication.run(KafkaMongoMySQLApp.class, args);
+        SpringApplication.run(MainBumbi.class, args);
 
         ConsoleUI.runConsoleUI();
     }
