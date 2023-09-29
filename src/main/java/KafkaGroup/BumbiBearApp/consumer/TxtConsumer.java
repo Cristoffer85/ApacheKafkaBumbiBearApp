@@ -11,7 +11,7 @@ import java.io.PrintWriter;
 
 @Service
 public class TxtConsumer {
-    private static final Logger LOGGER = LoggerFactory.getLogger(TxtConsumer.class);
+    static Logger LOGGER = LoggerFactory.getLogger(TxtConsumer.class);
 
     @KafkaListener(topics = "BumbiRegister", groupId = "myTxtGroup")
     public void consume(String message) {

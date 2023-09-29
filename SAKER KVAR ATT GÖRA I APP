@@ -1,7 +1,21 @@
-1. Skriva tester för lite klasser/metoder
+KVAR
+1.  Börja skriva på dokumentation, snygga till programmet
+2.  Hantering felinputs KonsolUI
 
-2. Börja skriva på dokumentation, snygga till programmet
+------------------------------
+KLART
+1.  Skriva tester för lite klasser/metoder                               - KLART FÖR ALLA VÄSENTLIGA KLASSER; VAD JAG SJÄLV ANSER IALLAFALL (consumer, producer, controller samt fetch-paket)
+2.  Hämta data ifrån databas                                             - KLART FÖR BÅDA DATABASER
+3.  KonsolUI                                                             - KLART
+4.  Consumer för både MongoDB, MySQLdatabas samt .Txt                    - KLART
+5.  Snygga till App, se över namn, logik, onödiga meth/imp/saker etc     - KLART
+6.  Felhantering inloggning remote MongoDB server (fallback lokal)       - KLART
+7.  Rekreations-hantering för 3e person (lätt sätta upp själv) via
+     application.properties                                              - KLART
+8.  Payload olika entities                                               - KLART
+9. Try-catch i anslutning till databaser + txt-logg                      - KLART
 
------------------
-EV.
+------------------------------
+EV, extra implementering
 1. Docker?
+2. JavaFX - Krångligt, får inte till det just nu, hoppar över tillsvidare.
