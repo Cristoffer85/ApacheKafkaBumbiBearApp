@@ -1,6 +1,5 @@
 KVAR
-1.  Börja skriva på dokumentation, snygga till programmet
-2.  Hantering felinputs KonsolUI
+
 
 ------------------------------
 KLART
@@ -14,6 +13,8 @@ KLART
      application.properties                                              - KLART
 8.  Payload olika entities                                               - KLART
 9. Try-catch i anslutning till databaser + txt-logg                      - KLART
+10. Hantering felinputs KonsolUI, acceptera ej blank-värde i inputs      - KLART
+11. Skriva klart dokumentation                                           - KLART
 
 ------------------------------
 EV, extra implementering

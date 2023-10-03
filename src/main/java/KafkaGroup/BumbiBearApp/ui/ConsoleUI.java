@@ -75,6 +75,12 @@ public class ConsoleUI {
         System.out.print("Enter fullname: ");
         String fullname = scanner.nextLine();
 
+        // Fault-handling to not accept a blank input to be typed into the database
+        if (species.isEmpty() || type.isEmpty() || fullname.isEmpty()) {
+            System.out.println("Error: Input cannot be blank.");
+            return;
+        }
+
         // Create MongoUser object
         MongoUser mongoUser = new MongoUser();
         mongoUser.setSpecies(species);
@@ -96,6 +102,7 @@ public class ConsoleUI {
 
         System.out.println("Data sent to MongoDB- MySQLDB- and TxtConsumer.");
     }
+
 
     public static void displayDataFromDatabases() {
         // Display/List MongoDB data

@@ -8,84 +8,59 @@
 ## Projekt - BumbiBearSpringApp
 
 ### Beskrivning av projektet
-En Todo-Applikation vilken kan hantera olika TODO:s (i textform, inmatat) mha CRUD emot MongoDB.
-I programmet kan man även skapa en egen användare som kan kopplas till de olika varierande TODO:sen.
+En SpringBoot Apache Kafka Java-applikation, som låter användaren (via IDE-konsolen) både producera och visa data av en specifik typ, art och fullständigt namn på en BumbiBear. Alla data bearbetas genom Apache Kafka som en integrationsplattform, därför sparas all data i Apache Kafka localhost broker på port 8080. Datan som matas in går också genom ett webb-API (HTTP) som från början användes i detta program genom postman med hjälp av POST-begäran, men implementerades senare i detta program för att hantera indata istället av ett Http-protokoll och ett konsol-UI.
 
-Varje TODO och Användare är unik med ett unikt id hanterat av egna metoder i programmet.
+Datan som skickas genom kafka sparas också i både en lokal mySQL-värd på standardport 3306, och antingen mongoDB Atlas remote med din anslutningssträng eller lokala mongoDB på standardport 27017 om det första valet inte fungerar. Datan sparas även lokalt i appen i .Txt-filen bredvid där denna Readme-fil finns.
+
+Allt sparas samtidigt med ett enda val och inmatning från användargränssnittet i konsolen.
+Applikationen har även TDD (testdriven utveckling) i testklasser kopplade till variabelklasser i appen. De kan köras separat.
 
 ### Vad du har gjort
-I ca 1,5 vecka (emellan 2023-01-19 --> 2023-06-27) har utvecklat detta program. Mer ingående och detaljerad information kan du läsa här nedanför.
-
+Emellan 2023-08-14 --> 2023-10-13 ca) har följt föreläsningar samt vidareutvecklat detta program vidare på egen hand med hjälp av tutorials om SpringBoot.
+Specifikt användes föreläsning ifrån skola Marcus lektioner, samt guider ifrån Javaguides.net (https://www.javaguides.net/2022/06/spring-boot-apache-kafka-tutorial.html) rörande både hur man bygger upp en Apache Kafka applikation med mySQL som huvudserver och MongoDB (https://www.javaguides.net/2019/12/spring-boot-mongodb-crud-example-tutorial.html)
+Javaguides är en väldigt omfattande sida, med många tutorials och som ger baskunskap om mycket inom just SpringBoot, så mycket av guiderna och kunskapen och lärdomen användes därifrån. Även chatGPT användes såklart för viss debugging och när man inte förstod vad man gjort fel- och inte, och behövde hjälp med viss implementering och hantering av ens specifika idéer.
 
 
 ## Planering
 
 ### Lösningsförslag innan uppgiften påbörjas
+Klura ut hur man använder både en mySQL-server samt en MongoDB-server samtidigt, och även en .Txt-fil lokalt i programmet i olika consumers för att få de att fungera tillsammans, utan problem, var lite klurigt.
+Testa olika implementationer med att först få in MongoDB i programmet, lära sig hur den anslutningen och connection fungerar emot kafka, separat, för att lära sig den. MySQL hade vi redan lärt oss tidigare med hjälp av JavaGuides.net samt Marcus föreläsningar. 
+
+Hur man sparar data in till en .Txt tar jag hjälp av internet av med hjälp av tex fileWriter vilket jag använt i ett annat separat spel-projekt jag håller på med.
 
 #### Hur du tänker försöka lösa uppgiften.(exempelvis)
-* Har laddat ned en färdig uppgiftsrepo-mall, med färdiga pom.xml-dependencies vilken vår lärare Marcus gjort och tänker arbeta på den därifrån. Div. uppdateringar som görs t-o-f kommer att ses i realtid av både ansv. lärare just nu Marcus + Lars isånafall.
-
-Öppnat IntelliJ och created 'new project from version control' där jag kopierade in URL-adressen ifrån repot skapat på Github.  
-Har den sedan i min egna IDE och tänker arbeta på den här.
-Tänker försöka börja bygga testklasserna imorgon, för att bygga den korrekt, bakvägen.
-Bygger sedan huvudklasserna och skapar mongoConnection och sätter upp en basMongoDBFacade.
+Börjar med att ungefär halvvägs in i föreläsningar och kursen, tänka i stort hur jag vill ha min applikation och utvecklar/gör om grundkoncept vi haft tidigare efter föreläsningar (för det är svårt att utveckla en färdig applikation innan man ens har fått grundkunskaperna hur man skall utveckla applikationen) därför känns bäst (om än kanske lite extra stress-påslag) men pga att vi hade ganska så lång tid på oss i just detta projekt/utmaning så kändes det bäst att ändå vänta lite tills man hade varierande olika kunskaps-bitar inom olika delar och sedan bygga ihop de likt lego och sätta ihop det lego-hus man till slut ville ha.
 
 #### Pseudokod.(exempelvis)
-Använde mig mest av Miro+Github för att få ur mig min skriv-frustration och få ned idéer fysiskt utskrivna, så det mesta finns där och här i bifogade bilder som länk precis nedanför (planningRes som folder i projektet)
-
-- [Bilder](#bilder)
-
+Hade ingen specifik, eller Github Project denna gång eller liknande mer bättre logg jag följde utan jag hade till detta inlämningsprojekt en lokal text-fil i denna app vilken går att se bredvid denna fil SAKER KVAR ATT GÖRA I APP där man kan se grundläggande implementering jag har haft, och velat implementera och hur det har gått med detta.
 
 ## Arbetet och dess genomförande
-Tydligare detaljinfo om hela projektet i byggplan går att se i Miro-bilder + Projects-bilder ovanför.
-
-
-* Dag 1 -
-  2023-06-19 Grundplan upprättad
-
-
-* Dag 2 - 2023-06-20 Fortsätter bygga vidare på grundplan, testar implementera lite mer saker i programmet
-
-
-* Dag 3 - 2023-06-21 Fortsätter med grundplan, men börjar ev. känna börjar köra fast litegrann, tycker programmet är rörigt och inte så jättelätt att förstå sig på alla gånger, börjar känna lite "sådär.." med strukturen just nu, + många test som strular/inte går igenom i testklasserna trots mock+Junit som ser tydligt och rätt ut genomfört. Kanske refaktorerar/gör om hela strukturen strax, gör om med User/VG-delen inbakad direkt så känns det rättare och riktigt och lugnare med för den delen också
-
-
-* Dag 4 - 2023-06-22 Kände att projektet mest var skit just nu. Tester som bara fortsätter och fortsätter krångla, frågat chatGPT 200+ gånger känns det som, men får ingen hjälp varför just mockningen av databas-klassen strular så j*-igt. Skrotar hela programidén och påbörjar ny sent på kvällen, där både Todo-samt User- är inbakad byggd på min tidigare 'Connection' och 'KeyHandler'-klass ifrån tidigare projekt. Väldigt nöjd med de just 2 klasserna iallafall vilka är verklige enkla och överskådliga just nu.
-
-
-* Dag 5 - 2023-06-23 Fortsätter bygga på dag innan upprättad ny idé, känns 950 gånger bättre (ca, ungefär då, iaf.. :) Fått grundprogram att fungera, med alla implementeringar som krävs för VG-nivå. Håller nu på att refaktorerar, samt undersöker varför 'Text' och 'Done'-value är null på User när man visar den.. nästa issue att baka sig ned i. Får nog bli en chatGPT på den också ev framåt, om jag inte kan hitta felet själv mha lite lo-fi tex.
-
-
-* Dag 6 - 2023-06-24 Byggde klart det sista med projektet (efter att suttit uppe till 02:30 inatt) och dokumentation. Förhoppningsvis har jag f¨tt ihop alltihopa korrekt just nu.  
-  Har gått igenom kravspec:en/uppgioftsdeklarationen på github totalt minst 2 gånger, detlajerat och långsamt så tror jag har fått med allt i funktionalitetsväg, testkört programmet (alla delar) själv, sett över UI/UX-del på den så man begriper vad man trycker och hur man lättast kan trycka det.  
-  Testklasser finns till de flesta klasser med publika metoder, har testat det jag kunde testa och det finns iallafall minst en testmetod per klass.
-  1 instansierad scanner finns totalt med som används, koden är ganska begriplig iallafall (hoppas jag..) och har inte kommenterat absolut mer än jag själv anser nödvändigt. Har sett över oanvända imports och tittat över pom.xml och raderat det som inte används heller.
-
-
-* Dag 7 - 2023-06-25 Programmet färdigt, efter genomgång av både Emil Sivertsson och Kristoffer Larsson i klassen så fick feedback på lite saker och har fixat med det under dagen. Bla gjort om och omstrukturerat Connection helt och hållet, där anslutning till server sköts nu helt och hållet via Connection och en konfigurationsfil ute i JinTDD-project mappen och som heter mongodb.properties, där man istället för att hålla på och krångla med diverse personers lösenord och användarnamn till mongodb, och måste be om de så kan man bara klistra in sin anslutningssträng inne i den filen som man personligen har på mongodb, sedan kan man enkelt testa hela programmet emot t.ex sin egna databas :) Så det känns 100%, och toppenbra och gött att det blev implementerat idag. Man får bara passa sig så man inte råkar pusha upp till github med sin egna sträng inne. Jag har default att den inte är det just nu, iaf. La till lite fler tester idag, och såg över lite estetik, kollade igenom koden och testade lite till bara för att se att inget ev. råkat blivit fel vid framtida ändringar (regressionstest, aha, titta vad jag kommer ihåg ifrån testbenämnningsfasen :)
 
 ### Vad som varit svårt
-Få till grundprogrammet vilket jag började med först, där jag bara hade Todos skapade ifrån en MongoDBFacade-klass eg, + en meny som skulle hantera allting, och testklasser. Jag hade jättesvårt att få testerna att gå igenom/fungera emot databas (vilket kanske ändå är lite förståeligt, då det är ganska nytt/helt nytt att testa emot en databas för eg. någon av oss)
-
+Få till programmet att fungera simultant tillsammans med 2 olika databaser (3 consumers) där vi bara hade lärt oss via föreläsningar en typ (mySQL) databas tidigare. Det var lite lurigt, men efter diverse problemlösningar, många pauser och träningsbreak, meditation, god mat och tänk att aldrig ge upp så gav det sig detta också.
 ### Beskriv lite olika lösningar du gjort
-* Testade först att göra lösning ovan enligt Rubriken Arbetet och dess genomförande. Insåg sen+märkte efter dag 3 att fasen, det här programmet kanske inte kommer hgå ihop så bra.. + kännas rörigare och rörigare och det är så att jag knappt själv börjar först vad jag kodat (o ingen annan heller ev.. ehe..)
+* Testade först att försöka få ihop båda databaser med endast en Entity/payload-klass, som skulle hantera data sparad till båda databaser, men insåg sedan att det skulle inte gå för MongoDB har andra Id-värden som genereras automatiskt in till sig, och gillar inte Long-värde bla och hur man annoterar Entity-klassen som krävs för MySQL där Primary Key är som Id-värdet som genereras in till databasen automatiskt. Detta krånglade till mycket, och jag kom inte på hur jag skulle komma runt det.
+* Kom sedan till insikt av olika anledningar att det var fel/man inte skulle ha endast en Entity-klass, utan man måste ju såklart göra en till, och även göra ett till Mongo-Repository-Interface som hanterar detta. När jag väl fick ordning på det och separerade detta blev allting genast väldigt mycket mer logiskt, och jag kunde kapa ned koden signifikt för att få den lätt att förstå och lätt att läsa med. 
+* fetch-paketet är ett helt unikt paket där visande- och display av datan hanteras för att visa data enligt konsolval i konsolen på val nummer 2. Denna implenterades som en av de sista i projektet, för att försöka få den att visa data samt även den hålla så kort och liten och enkel att visa med.
+
+* Detta är endast exempel på flertal olika lösningar med olika klasser/package:s konstruerade.
 
 
-* Så efter lite svordomar, frustration och div. ångest hemma (ursäkta alla grannar + Mighty-duck hemma (Gummianka vi fått av Marcus))
-  Skrotade den och började om med ett mycket cleanare, finare program vilken centrerar kring en todapplikation, med en getter+setter class för både Todo:s och User:s (Jag ville nog ha med både Todo+User för att vilja utmana mig själv litegrann) och det gick, mycket lättare.
-
+Detta har varit ett av mina grund- och drivmål i detta projekt med. Även om jag nu komplicerar detta projekt med fler databaser etc och mer implementeringar, så skall inte koden bli mer avancerad för det.
 ### Beskriv något som var besvärligt att få till
-Kan bara referera till rubrik Vad som varit svårt ovanför. Testa emot databas, testa hela programmet tog också lite tid/extra planering och annat att tänka på. Github CI var väl också lite struligt när man väl inte visste vad det var´hur det skulle implementas, men när man väl vet och visste det är det ju ganska logiskt och fungerar lätt och bra.
+Kan bara referera till rubrik Vad som varit svårt ovanför. Få till flera olika databaser/consumers i samma program var lite rörigt när man inte visste helt vad man/hur man skulle göra det, men till slut så gick det.
 
 ### Beskriv om du fått byta lösning och varför i sådana fall
-Refererar igen eg. bara till rubriken lite olika du gjort ovanför, och fick byta lösning för tyckte programmet började bli rörigt+svårt att förstå sig på. Både jag+någon annan ska förstå sig på vad detta program var byggt på ca 2 månader framåt.
+Entity-klasserna och bara ha en sådan då man har 2st olika databaser var ju helt fel tills den dag då det slog mig och separera detta var helt rätt. Om ärligt, så skulle vilja ha en lektion i modulhantering tidigare, och bygga ett projekt ifrån grunden mha moduler, hade nog blivit lite enklare.
+
 
 
 
 ## Egna reflektioner
 
+
 ### Vad gick bra
-Göra om programmet till den nya lösningen med Getters+Setters, refaktorera koden, förminska den i fler klasser och göra den tydligare och enklare att läsa. Gör den mer läsbar så man fattar vad tusan testerna skall testa och inte etc med, så klasserna blir mindre/kan man både leta+finna fel mycket enklare också. Känns svinbra.
 
 ### Vad gick dåligt
 Den första lösningen, som beskrivet ganska omfattande här ovan. Den blev bara rörig, och kände blev mer och mer kaotisk till slut och kände mig själv gå ned i kaotiskt mående dessutom på snudd, så bästa där var egentligen bara skit i det mesta (OBS: ENBART - program då alltså, inga andra hemska personliga destruktiva tankar, de existerar inte :)  
@@ -113,45 +88,3 @@ Interface, mer abstrakta lösningar, hade jag gärna velat haft med, men som ova
 
 ### Förslag på förbättringar av UI/UX för design + reflektion av den
 Har gjort en ganska tydlig/fin förbättring av utprintade menyvalen här i terminal iaf (så gott det går, tycker jag) men göra ett FX/GUI här i IntelliJ med, fram till presentation+Inlämning hade väl varit kul. Får se om det hinns med nu i dagarna, ev, tar det sist. Just nu är prio på att få alla testerna klara och fungerande, samt programmet med. Dagen är nu 2023-06-23, Midsommarafton.
-
-
-## Bilder
-
-#### Miro-Plan med inkluderade diagram
-Påbörjar lite skisser idag - Miro 2023-06-19
-![MiroPlan 2023-06-19.png](planningRes%2FMiroPlan%202023-06-19.png)
-
-Dag 2 Miro - 2023-06-20
-![MiroPlan 2023-06-20.png](planningRes%2FMiroPlan%202023-06-20.png)
-
-Dag 3 Miro - 2023-06-21
-![MiroPlan 2023-06-21.png](planningRes%2FMiroPlan%202023-06-21.png)
-
-Dag 4 Miro - 2023-06-22
-(F*- it, blev lite sur idag så skrotade hela grundprogrammet+iden)
-
-började om med Getters+Setters då jag ändå ville testa+lära mig mer om det och använda det, + implementera lite snyggare kod (Interfaces kanske kommer senare, med...? Då jag gärna vill ha med det+lära mig mer.
-Jag vill konstant lära mig bli bättre o hur man skriver riktigt snygg kod.
-![MiroPlan 2023-06-22.png](planningRes%2FMiroPlan%202023-06-22.png)
-
-Dag 5 Miro - 2023-06-23 - Nya programidén + test-environmenten
-![MiroPlan 2023-06-23.png](planningRes%2FMiroPlan%202023-06-23.png)
-
-Dag 6 Miro - 2023-06-25 - Nya färdiga program, idén diagrammet klart.
-![MiroPlan 2023-06-25.png](planningRes%2FMiroPlan%202023-06-25.png)
-
-### Github Project
-Github Projects - 2023-06-21
-![Github Projects 2023-06-21.png](planningRes%2FGithub%20Projects%202023-06-21.png)
-
-Github Projects - 2023-06-22 (New idea implemented+tested = Got f*-ing angry at the last one, scrapped it and tried a new more harmonical one)
-![Github Projects 2023-06-22.png](planningRes%2FGithub%20Projects%202023-06-22.png)
-
-Github Projects - 2023-06-23 (1)
-![Github Projects 2023-06-23.png](planningRes%2FGithub%20Projects%202023-06-23.png)
-
-Github Projects - 2023-06-23 (2)
-![Github Projects 2023-06-23 (2).png](planningRes%2FGithub%20Projects%202023-06-23%20%282%29.png)
-
-Github Projects - 2023-06-24 (The TodoManagerTest-class is now complete as well.. Phew.. Aah.. finally.. Feels so f... great.)
-![Github Projects 2023-06-24.png](planningRes%2FGithub%20Projects%202023-06-24.png)
