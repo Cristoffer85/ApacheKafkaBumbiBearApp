@@ -33,7 +33,7 @@ Hur man sparar data in till en .Txt tar jag hjälp av internet av med hjälp av 
 Börjar med att ungefär halvvägs in i föreläsningar och kursen, tänka i stort hur jag vill ha min applikation och utvecklar/gör om grundkoncept vi haft tidigare efter föreläsningar (för det är svårt att utveckla en färdig applikation innan man ens har fått grundkunskaperna hur man skall utveckla applikationen) därför känns bäst (om än kanske lite extra stress-påslag) men pga att vi hade ganska så lång tid på oss i just detta projekt/utmaning så kändes det bäst att ändå vänta lite tills man hade varierande olika kunskaps-bitar inom olika delar och sedan bygga ihop de likt lego och sätta ihop det lego-hus man till slut ville ha.
 
 #### Pseudokod.(exempelvis)
-Hade ingen specifik, eller Github Project denna gång eller liknande mer bättre logg jag följde utan jag hade till detta inlämningsprojekt en lokal text-fil i denna app vilken går att se bredvid denna fil SAKER KVAR ATT GÖRA I APP där man kan se grundläggande implementering jag har haft, och velat implementera och hur det har gått med detta.
+Hade ingen specifik, eller Github Project denna gång eller liknande mer bättre logg jag följde utan jag hade till detta inlämningsprojekt en lokal text-fil i denna app vilken går att se bredvid denna fil DEV_LOG där man kan se grundläggande implementering jag har haft, och velat implementera och hur det har gått med detta.
 
 ## Arbetet och dess genomförande
 
