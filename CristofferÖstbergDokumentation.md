@@ -59,32 +59,32 @@ Entity-klasserna och bara ha en sådan då man har 2st olika databaser var ju he
 
 ## Egna reflektioner
 
-
 ### Vad gick bra
+Att få ihop grundidén med att faktist bara inte ha en databas, utan ha flera och även en .Txt-fil, gjorde det hela lite roligt och mer spännande och utmanande att få till.
 
 ### Vad gick dåligt
-Den första lösningen, som beskrivet ganska omfattande här ovan. Den blev bara rörig, och kände blev mer och mer kaotisk till slut och kände mig själv gå ned i kaotiskt mående dessutom på snudd, så bästa där var egentligen bara skit i det mesta (OBS: ENBART - program då alltså, inga andra hemska personliga destruktiva tankar, de existerar inte :)  
-och börja om med det och skriv det bra mycket enklare och finare. Känns jättebra.
+Den första lösningen, som beskrivet ganska omfattande här ovan. Den blev bara rörig, och kände blev mer och mer kaotisk till slut. Kom sedan efter påkommet med fler Entity-klasser och börja om med det och skriv det bra mycket enklare och finare. Känns jättebra.
 
 ### Vad har du lärt dig
-Implementera getters+setters mer, göra Connection-klassen + KeyHandler-klasserna 'ren' för framtida bruk mer (kommer jag och skall använda i framtida MongoDB-projekt då jag hittils nu fastnat jättemycket i just MongoDB - tycker det är en svinkul, och bra och rolig DB-lösning med.
-
-Jag har tänkt implementera den i ett eget 2D-spel jag håller på och bygger på fritiden :) Jag är ganska kreativ sedan barnsben (Musik+Instrument sedan 6 års ålder, Bygga/snickra det mesta, laga bilar, 3D-skriva, måla etc) som person så gillar att både baka in + slå ihop flera olika div. program och saker. Tycker det är superkul.
+Implementera fler databaser, skriva app:ar ännu kortare och mer lättlästa. Jag tycker jag själv (iallafall) har försökt, och lyckats ganska bra med att banta ned just denna applikation till något mycket enklare, och mer lättläst och överskådligt så den känns väldigt simpel och lättläst.
 
 ### Vad hade du gjort annorlunda om ni gjort om projektet
-Troligtvis läst på mer om enklare struktur i program, googlat lite hur man enklast, möjligast kan lägga upp det enklaste 'struktur'-tänket i det hela, med bara ett visuellt diagram framför en. Hade nog hjälpt mycket. Jag tyckte jag själv hade en ganska bra grundplan i detta hela, med både väl förberedd innan och tänkte att detta skall jag bara ta det lugnt och bra, och ta det i rätt ände och bara börja med G-delen först, och kände så mycket pepp+inspiration för detta, men visade sig sen då att programmet mer blev rörigare och rörigare. Så jag hade nog behövt en tydligare struktur ifrån början, med både User+Todo med, då jag nog ändå ville+ville med det i projektet. Jag vill utmana mig litegrann.
+Troligtvis velat haft en lektion om just modul-hantering och byggande och felsökande av det i IDE tidigare, och försökt implementera det på egen hand tidigare. Inte för att det på något sätt är nödvändigt, men det gör koden mycket mer lättläst och mer DRY och rekreativ etc.
 
 ### Vilka möjligheter ser du med de kunskaper du fått under kursen.
-Bygga mer tydligare och enklare program, mer överskådliga och tusan chansen kanske finns nu, dessutom att det kanske är så att jag kommer ihåg ca 1 år framåt vad tusan det är jag har skrivit just här idag, och kommer ihåg + kan förfina det dessutom.
+Bygga ännu mer avancerade program, med fler olika databashantering i ett och samma projekt samt bygga de samtidigt simplare/DRY och mer överskådligt, samtidigt som jag i stort fått kunskap om vad Systemintegration/Mikroservices är för något och hur det fungerar i praktiken, och vad det är bra för (Jag tycker det är skithäftigt/bra iallafall, då jag som sagt sedan liten älskat Lego+Minecraft) och möjligheten att kunna få bygga och kustomisera i princip applikationer, saker på dator och digitalt i princip hur man vill, tycker jag är fantastiskt. 
+
+Jag har ända sedan liten varit en väldigt kreativ person.
 
 ### Varför jag valde just denna specifika lösning
-Som jag har förklarat lite ytterligare här ovanför i koden, så tyckte ja att just denna lösning med getters+setters för både User och Todo, och sedan en 'Manager' för var och en där CRUD-operationerna sköttes verkade ganska logiskt och lättläst. Både i programform samt i diagramform. Man förstår eg. vart alla pilar etc tar vägen och hur de går fram-och-tillbaka, och är ganska lätta att förstå sig på, iaf, tycker jag. Sedan en central TodoApplication vilken sköter texten och menyval och hämtar metoderna ifrån de 2 olika klasserna.
+Som förklarat tidigare, att jag ville utmana mig själv mer genom att lägga till fler element i app:en som fler databaser, etc.
 
 ### Förslag på förbättringar av koden
-Implementera ett Interface, göra både USerManager och TodoManager ännu mer lättläst och abstrakt. Tyckte det blev lite grötigt ändå (trots att jag refaktorerat nu, och fått det att se ännu bättre ut än tidigare dock), och funderade på ev. lösningar, men man får ta lite vad tid man har också. Man kan inte alltid ändra världen och rädda den helt och bygga ett nytt Rom på en och samma gång etc. På knapp 1,5 vecka utföra detta program med fulla tester på hela programmet + dokumentation, testning, samtestning av klasskamrat på egen hand totalt, dessutom, får man ändå väga in lite vad man själv kan samt skulle hunnit med.
+Också som tidigare förklarat, kunnat haft en lektion om modulhantering och läst på/tittat på mer om videor om just detta på internet tidigare för att lära mig det, verkar roligt. När man väl påbörjat ett projekt och kommit ganska långt in i det, kan det lätt bli kaotiskt och hela programmet måste göras om bara för att man ville ändra en grundimplementering mitt i, eller långt fram i.
 
 ### Exempel på lösningar jag valde att inte implementera
-Interface, mer abstrakta lösningar, hade jag gärna velat haft med, men som ovan beskrivet så på grund av tidsbrist (midsommar med, faktiskt) så får man ibland väga tiden. Programmet kan säkerligen förbättras mer i framtiden, bara man lägger tid+tid på det.
+JavaFX, jag ville/vill ha in det men jag är inte säker/100% på hur jag skulle få det att fungera tillsammans med SpringBoot, så det kändes lite overkill eller mer resurskrävande att göra just nu så jag höll mig till MVP just där iallafall.
+Hade även tankarna inne på Docker, för att få allt till en Docker-image som var enkel att bara köra igång och starta men sparar även denna till senare.
 
 ### Förslag på förbättringar av UI/UX för design + reflektion av den
-Har gjort en ganska tydlig/fin förbättring av utprintade menyvalen här i terminal iaf (så gott det går, tycker jag) men göra ett FX/GUI här i IntelliJ med, fram till presentation+Inlämning hade väl varit kul. Får se om det hinns med nu i dagarna, ev, tar det sist. Just nu är prio på att få alla testerna klara och fungerande, samt programmet med. Dagen är nu 2023-06-23, Midsommarafton.
+Samma där, hade nog velat och kunnat implementera ett JavaFX GUI om jag haft tid/orkat sätta+lära mig mer tid om att lära kring det. Var en del implementeringar som verkade långa pch komplicerade för att få till där.
