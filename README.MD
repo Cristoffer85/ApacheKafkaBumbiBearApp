@@ -57,7 +57,7 @@ Go further down to #Usage to setup the parameters needed to use mySQL and MongoD
 change the password on datasource.password,  and tablename from datasource.url to your own in order to be able test local MySQL on port 3306.
 
 
-Finally, Run the program from the IDE and handle the UI-choices from the console menu, and view the data in real-time getting shown in the console produced and saved, from either (or both) mySQL, MongoDB and .Txt-file.
+Finally, Run the class MainBumbi from the IDE and handle the UI-choices from the console menu, and view the data in real-time getting shown in the console produced and saved, from either (or both) mySQL, MongoDB and .Txt-file.
 
 
 ## Credits
