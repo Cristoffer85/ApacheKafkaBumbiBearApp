@@ -1,4 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/MYVtI0hB)
+
 [![Open in Codespaces](https://classroom.github.com/assets/launch-codespace-7f7980b617ed060a017424585567c406b6ee15c891e84e1186181d67ecf80aa0.svg)](https://classroom.github.com/open-in-codespaces?assignment_repo_id=11361325)
 # Project name BumbiBearSpringApp
 
@@ -18,7 +18,7 @@ But i thought, hey, why not maybe explore the other possibilities that also exis
 
 - What problem does it solve?
 
-It lets the user both input different parameters of chosen subject BumbiBears, send to Kafka broker, then also saves that data to databases. And, also lets the user through another console-choice view the data that has been saved through the various possibilities.
+It lets the user both input different parameters of chosen subject BumbiBears send to Kafka broker, then also saves that data to databases. And, also lets the user through another console-choice view the data that has been saved through the various possibilities.
 
 - What did you learn?
 
@@ -26,7 +26,7 @@ Alot about trying to handle multiple databases at once, trying to make them coex
 <br> Also learned alot Apache Kafka itself, how it acts as a broker that handles microservices (in this case BumbiBears) and puts them into the broker through a producer (breaking down the cog-wheels from internet and breaking it down in smaller parts)
 
 I also like to call, and what i myself realised and came up with during this course;
-<br> is that this part with Integration in developing is like <span style="color:red"> "loose candy" </span>from the shelves of the swedish term. 
+<br> is that this part with Integration in developing is like <mark>"loose candy"</mark> from the shelves of the swedish term. 
 <br> Where different producers produce multiple sets of different candy(information) and then put them into a big-big candy-shelves(Brokers/servers) and then lets the consumer(or groups as well) choose exactly what type of candybag they want for themselves.
 <br> Free customization and creatability (but also with a little bit of ground-structure) and people be able to create what themselves want instead of someone else telling them what. Thats what its all about.
 

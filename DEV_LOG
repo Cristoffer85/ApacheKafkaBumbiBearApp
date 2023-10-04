@@ -19,3 +19,6 @@ KLART
 EV, extra implementering
 1. Docker?
 2. JavaFX - Krångligt, får inte till det just nu, hoppar över tillsvidare.
+
+3. Felhantering för om KafkaServern otillgänglig? Just nu finns felhantering
+   om MongoDB remote server nere, och felinputs vid UI:t (som kopplar till producer/consumer) om man gör det.

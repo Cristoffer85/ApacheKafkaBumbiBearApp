@@ -1,8 +1,11 @@
+###### [Top]
 # Cristoffer Östberg
 
-- [Planering](#planering)
-- [Arbetet och dess genomförande](#arbetet-och-dess-genomförande)
-- [Egna reflektioner](#egna-reflektioner)
+<br><br>
+
+| [Planering innan arbete](#planering) | [Arbetet och dess genomförande](#arbetet-och-dess-genomforande) | [Egna reflektioner](#egna-reflektioner) |
+|--------------------------------------|-----------------------------------------------------------------|-----------------------------------------|
+
 
 
 ## Projekt - BumbiBearSpringApp
@@ -20,8 +23,18 @@ Emellan 2023-08-14 --> 2023-10-13 ca) har följt föreläsningar samt vidareutve
 Specifikt användes föreläsning ifrån skola Marcus lektioner, samt guider ifrån Javaguides.net (https://www.javaguides.net/2022/06/spring-boot-apache-kafka-tutorial.html) rörande både hur man bygger upp en Apache Kafka applikation med mySQL som huvudserver och MongoDB (https://www.javaguides.net/2019/12/spring-boot-mongodb-crud-example-tutorial.html)
 Javaguides är en väldigt omfattande sida, med många tutorials och som ger baskunskap om mycket inom just SpringBoot, så mycket av guiderna och kunskapen och lärdomen användes därifrån. Även chatGPT användes såklart för viss debugging och när man inte förstod vad man gjort fel- och inte, och behövde hjälp med viss implementering och hantering av ens specifika idéer.
 
+<br><br>
+
+
+
+------
+
+------
+
+
 
 ## Planering
+- [Tillbaka till toppen](#top)
 
 ### Lösningsförslag innan uppgiften påbörjas
 Klura ut hur man använder både en mySQL-server samt en MongoDB-server samtidigt, och även en .Txt-fil lokalt i programmet i olika consumers för att få de att fungera tillsammans, utan problem, var lite klurigt.
@@ -35,7 +48,10 @@ Börjar med att ungefär halvvägs in i föreläsningar och kursen, tänka i sto
 #### Pseudokod.(exempelvis)
 Hade ingen specifik, eller Github Project denna gång eller liknande mer bättre logg jag följde utan jag hade till detta inlämningsprojekt en lokal text-fil i denna app vilken går att se bredvid denna fil DEV_LOG där man kan se grundläggande implementering jag har haft, och velat implementera och hur det har gått med detta.
 
-## Arbetet och dess genomförande
+
+
+## Arbetet och dess genomforande
+- [Tillbaka till toppen](#top)
 
 ### Vad som varit svårt
 Få till programmet att fungera simultant tillsammans med 2 olika databaser (3 consumers) där vi bara hade lärt oss via föreläsningar en typ (mySQL) databas tidigare. Det var lite lurigt, men efter diverse problemlösningar, många pauser och träningsbreak, meditation, god mat och tänk att aldrig ge upp så gav det sig detta också.
@@ -56,8 +72,8 @@ Entity-klasserna och bara ha en sådan då man har 2st olika databaser var ju he
 
 
 
-
 ## Egna reflektioner
+- [Tillbaka till toppen](#top)
 
 ### Vad gick bra
 Att få ihop grundidén med att faktist bara inte ha en databas, utan ha flera och även en .Txt-fil, gjorde det hela lite roligt och mer spännande och utmanande att få till.
