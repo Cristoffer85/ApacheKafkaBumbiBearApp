@@ -37,7 +37,6 @@ I also like to call, and what i myself realised and came up with during this cou
 
 4. Clone this project from Github into your own IDE.
 
-Make sure your firewall isnt blocking any ports needed for the app, and make sure you do the setup for the different databases and Apache kafka correct if you dont already have them and know how to operate them.
 
 Maven Dependencies in a pom.xml file thats included in this project shall have everything thats required to run this program.
 

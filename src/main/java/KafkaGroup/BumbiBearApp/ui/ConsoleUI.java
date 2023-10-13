@@ -57,7 +57,7 @@ public class ConsoleUI {
     }
 
     public static void displayMenu() {
-        System.out.println("===== Console UI Menu =====");
+        System.out.println("\n===== Console UI Menu =====");
         System.out.println("1. Send Data (through Kafka) to MongoDB, MySQL & .Txt");
         System.out.println("2. View Data from MongoDB, MySQL & .Txt");
         System.out.println("0. Exit");
@@ -107,7 +107,7 @@ public class ConsoleUI {
     public static void displayDataFromDatabases() {
         // Display/List MongoDB data
         List<MongoUser> mongoUsers = mongoService.getAllMongoUsers();
-        System.out.println("MongoDB Data:");
+        System.out.println("\nMongoDB Data:");
         for (MongoUser user : mongoUsers) {
             System.out.println(user.toString());
         }
@@ -123,7 +123,7 @@ public class ConsoleUI {
         // (Had to add/have the try-catch here as well, since the TxtConsumer have it, dont know why by i couldnt make it work without it. Even since both MongoDB and MySQLConsumer have try-catches as well. Wellwell, question for another decade, i suppose.
         System.out.println("\n.Txt File Data:");
         try {
-            List<String> lines = Files.readAllLines(Paths.get("rec_messages_myGroup1.txt"));
+            List<String> lines = Files.readAllLines(Paths.get("Rec_data_TxtConsumer.txt"));
             for (String line : lines) {
                 System.out.println(line);
             }
